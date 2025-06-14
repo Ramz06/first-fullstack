@@ -27,23 +27,11 @@ const ShoppingMenu: React.FC<ItemListProps> = () => {
   const purchasedCount = items.filter((item) => item.purchased).length;
   const totalItems = items.length;
   const progress = totalItems > 0 ? (purchasedCount / totalItems) * 100 : 0;
+  console.log(setItems)
+  console.log(progress)
   return (
     <div className="container">
       <Card className="">
-        <CardBody>
-          <Title>Daftar Belanja</Title>
-          <Divider />
-        </CardBody>
-        <CardBody>
-          <ItemList items={items} />
-        </CardBody>
-        <CardBody className="grid grid-cols-2 gap-4">
-          <StatCard title="Total item" value={totalItems} />
-          <StatCard
-            title="belum dibeli"
-            value={items.filter((item) => !item.purchased).length}
-          />
-        </CardBody>
       </Card>
     </div>
   );

@@ -9,4 +9,12 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('items')
+  getItems() {
+    return [
+      { id: 1, name: 'Item 1' },
+      { id: 2, name: 'Item 2' },
+    ];
+  }
 }
