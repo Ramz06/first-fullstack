@@ -1,5 +1,5 @@
 import type React from "react";
-import ShoppingMenu from "../../Layouts/ShoppingMenu";
+import ShoppingMenu from "../../components/Layouts/ShoppingMenu";
 import { useState } from "react";
 
 type ShoppingItems = {

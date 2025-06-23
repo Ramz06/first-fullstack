@@ -1,16 +1,22 @@
-version: "3.8"
-
+version: '3.8'
 services:
-  postgres:
-    image: postgres:15
+  # Nama service kita untuk MySQL
+  mysql_db:
+    # Menggunakan image MySQL versi 8.0
+    image: mysql:8.0
+    # Memberi nama container
+    container_name: nestjs_prisma_mysql_db
+    restart: always
+    # Variabel lingkungan untuk konfigurasi MySQL
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: mydb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: simple_toko
+    # Memetakan port. Port 3306 (default MySQL) di laptop Anda akan terhubung ke port 3306 di dalam container
     ports:
-      - "5432:5432"
+      - "3306:3306"
+    # Menyimpan data MySQL di volume agar tidak hilang
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
 
 volumes:
-  pgdata:
+  mysql_data:

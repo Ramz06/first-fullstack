@@ -1,28 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashboardPage from "../components/pages/DashboardPage/DashboardPage";
-import SignInPage from "../components/pages/auth/SingInPage";
-import SignUpPage from "../components/pages/auth/SignUpPage";
-import RootLayout from "../components/Layouts/RootLayout";
+import DashboardPage from "../pages/DashboardPage/DashboardPage";
+import SignInPage from "../pages/auth/SingInPage";
+import SignUpPage from "../pages/auth/SignUpPage";
+import App from "@/App";
+import ProtectedRoute from "@/routes/ProtectedRoute";
 
 const router = createBrowserRouter([
-    {
-        element: <RootLayout />,
-        children: [
-            {
-                path: '/',
-                index: true,
-                element: <DashboardPage />
-            },
-            {
-                path: "/signin",
-                element: <SignInPage />
-            },
-            {
-                path: "/signup",
-                element: <SignUpPage />
-            }
-        ]
-    }
-])
+  {
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        index: true,
+        element: (
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/signin",
+        element: <SignInPage />,
+      },
+      {
+        path: "/signup",
+        element: <SignUpPage />,
+      },
+    ],
+  },
+]);
 
 export default router;

@@ -1,11 +1,7 @@
 import type React from "react";
 import { useState } from "react";
-import Card from "../../Fragments/Card";
-import CardBody from "../../Fragments/CardBody";
-import Title from "../../Elements/Title";
-import Divider from "../../Elements/Divider";
-import ItemList from "../../Elements/ItemList";
-import StatCard from "../../Fragments/Statcard";
+import Card from "../../Elements/Card";
+
 
 type ShoppingItems = {
   id: number;
@@ -32,6 +28,7 @@ const ShoppingMenu: React.FC<ItemListProps> = () => {
   return (
     <div className="container">
       <Card className="">
+        <></>
       </Card>
     </div>
   );
