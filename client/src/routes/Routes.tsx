@@ -1,9 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashboardPage from "../pages/DashboardPage/DashboardPage";
-import SignInPage from "../pages/auth/SingInPage";
-import SignUpPage from "../pages/auth/SignUpPage";
+import DashboardPage from "../features/dashboard/routes/DashboardPage";
+import SignInPage from "../features/auth/routes/SingInPage";
+import SignUpPage from "../features/auth/routes/SignUpPage";
 import App from "@/App";
-import ProtectedRoute from "@/routes/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -13,9 +12,7 @@ const router = createBrowserRouter([
         path: "/",
         index: true,
         element: (
-          <ProtectedRoute>
             <DashboardPage />
-          </ProtectedRoute>
         ),
       },
       {

@@ -1,8 +1,9 @@
 import type React from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css"
-import Navbar from "./components/Fragments/Navbar";
-import Footer from "./components/Elements/Footer";
+import Footer from "./features/dashboard/components/Elements/Footer";
+import Navbar from "./components/Layouts/Navbar";
+
 
 const App: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const App: React.FC = () => {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

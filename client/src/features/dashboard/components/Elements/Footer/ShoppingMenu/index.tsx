@@ -1,7 +1,5 @@
 import type React from "react";
 import { useState } from "react";
-import Card from "../../Elements/Card";
-
 
 type ShoppingItems = {
   id: number;
@@ -27,9 +25,6 @@ const ShoppingMenu: React.FC<ItemListProps> = () => {
   console.log(progress)
   return (
     <div className="container">
-      <Card className="">
-        <></>
-      </Card>
     </div>
   );
 };
